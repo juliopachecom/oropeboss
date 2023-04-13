@@ -18,4 +18,15 @@ function DataFetching(ruta){
     return(posts)
 }
 
-export default DataFetching
+
+function DataPost(ruta, data) {
+    axios.post(ruta, data)
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+}
+
+export { DataFetching, DataPost }

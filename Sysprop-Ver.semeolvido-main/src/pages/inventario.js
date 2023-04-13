@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import Modal from 'react-bootstrap/Modal';
-import dataGet from '../DataFetching';
+import { DataFetching } from '../DataFetching';
 import '../assets/styles.scss'
 
 function agregarArticulo(ruta, nombre, cantidad, precio, categoria){
@@ -22,7 +22,7 @@ function editarArticulo(){
 }
 
 function Inventario() {
-  const itemArticulo = dataGet("/articulos")
+  const itemArticulo = DataFetching("/articulos")
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
